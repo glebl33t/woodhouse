@@ -9,7 +9,7 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-   body {
+    body {
     background: 
         repeating-linear-gradient(
             90deg,
@@ -17,7 +17,10 @@
             #5d4037 20px,
             #4e342e 20px,
             #4e342e 40px
-        );
+        ); 
+
+    color: #2e2e2e;
+    scroll-behavior: smooth;
 }
 
     a { text-decoration: none; color: inherit; }
@@ -26,7 +29,7 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.85);
       backdrop-filter: blur(4px);
       z-index: 1000;
       transition: all 0.4s ease;
@@ -75,12 +78,15 @@
     nav ul li a:hover { color: #f0c27b; }
 
     main {
-      background-color: rgba(255,255,255,0.95);
+      /* Более прозрачный основной блок */
+      background-color: rgba(255,255,255,0.7);
       border-radius: 12px;
       max-width: 1000px;
       margin: 100px auto 0 auto;
       padding: 40px 35px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(139, 94, 60, 0.1);
     }
 
     section { margin-bottom: 60px; }
@@ -91,12 +97,14 @@
       padding-left: 15px;
       font-size: 1.8em;
       margin-bottom: 25px;
+      opacity: 0.9;
     }
 
     p { 
       line-height: 1.7; 
       margin-bottom: 20px;
       font-size: 1.1em;
+      opacity: 0.8;
     }
 
     .services, .advantages, .gallery {
@@ -106,47 +114,68 @@
 
     .services { grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); }
     .card, .advantage {
-      background: #fff8f2;
+      /* Более прозрачные карточки */
+      background: rgba(255, 248, 242, 0.6);
       border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       padding: 25px 20px;
       text-align: center;
       font-weight: 600;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: all 0.3s ease;
       font-size: 1.1em;
+      border: 1px solid rgba(139, 94, 60, 0.1);
+      backdrop-filter: blur(3px);
+      opacity: 0.9;
     }
 
     .card:hover, .advantage:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      transform: translateY(-3px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+      background: rgba(255, 248, 242, 0.8);
+      opacity: 1;
     }
 
     .gallery { grid-template-columns: repeat(auto-fit, minmax(300px,1fr)); }
     .gallery img {
       width: 100%;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       transition: transform 0.3s ease;
       cursor: pointer;
+      opacity: 0.9;
     }
 
-    .gallery img:hover { transform: scale(1.03); }
+    .gallery img:hover { 
+      transform: scale(1.03);
+      opacity: 1;
+    }
 
     .contacts { 
       text-align: center; 
       font-size: 1.2em; 
       line-height: 1.8; 
     }
-    .contacts a { color: #8b5e3c; font-weight: 600; }
-    .contacts a:hover { text-decoration: underline; }
+    .contacts a { 
+      color: #8b5e3c; 
+      font-weight: 600; 
+      opacity: 0.9;
+    }
+    .contacts a:hover { 
+      text-decoration: underline;
+      opacity: 1;
+    }
+    .contacts p {
+      opacity: 0.85;
+    }
 
     footer {
-      background-color: rgba(0,0,0,0.7);
+      background-color: rgba(0,0,0,0.6);
       color: white;
       text-align: center;
       padding: 25px;
       font-size: 1em;
       margin-top: 60px;
+      opacity: 0.9;
     }
 
     .fixed-buttons {
@@ -160,21 +189,23 @@
     }
 
     .fixed-buttons a {
-      background-color: #8b5e3c;
+      background-color: rgba(139, 94, 60, 0.9);
       color: white;
       padding: 15px 22px;
       border-radius: 50px;
       font-weight: 600;
       text-align: center;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: all 0.3s ease;
       font-size: 1.1em;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
     .fixed-buttons a:hover { 
-      background-color: #a06b42;
+      background-color: rgba(160, 107, 66, 0.95);
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
     }
 
     .lightbox {
@@ -245,6 +276,7 @@
       main {
         margin: 0 10px 0 10px;
         padding: 25px 20px;
+        background-color: rgba(255,255,255,0.75);
       }
       
       h2 {
@@ -270,6 +302,7 @@
       .card, .advantage {
         padding: 20px 15px;
         font-size: 1em;
+        background: rgba(255, 248, 242, 0.7);
       }
       
       .fixed-buttons {
@@ -368,12 +401,10 @@
   <section id="gallery">
     <h2>Галерея работ</h2>
     <div class="gallery">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/02/banya-bogushovo_0002_img_1863.jpg" alt="Дом с террасой">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/02/banya-bogushovo_0001_img_3819.jpg" alt="Баня">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/02/banya-mogilev_0005_5284996011674167679.jpg" alt="Терраса">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/02/banya-mogilev_0003_5285173492607741526.jpg" alt="Дом с верандой">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/03/banya-ratomka_main.jpg" alt="Баня 2">
-      <img src="https://ckgroup.by/wp-content/uploads/2025/02/banya-mogilev_main.jpg" alt="Терраса возле дома">
+      <img src="https://i.ibb.co/5WhRVv60/photo-2025-11-18-21-48-01.jpg" alt="Столярные работы">
+      <img src="https://i.ibb.co/SpP3FP6/photo-2025-11-18-21-48-03-2.jpg" alt="Деревянная конструкция">
+      <img src="https://i.ibb.co/C3KGbwDB/photo-2025-11-18-21-48-03.jpg" alt="Строительство">
+      <img src="https://i.ibb.co/xK2Kh7q7/photo-2025-11-18-21-48-04.jpg" alt="Деревянная отделка">
     </div>
   </section>
 
