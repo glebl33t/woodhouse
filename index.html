@@ -182,10 +182,38 @@
     .lightbox .prev { left: 20px; }
     .lightbox .next { right: 20px; }
 
-    @media (max-width: 600px) {
+    /* Исправление для мобильных устройств */
+    @media (max-width: 768px) {
+      main {
+        margin-top: 130px;
+        padding: 20px 15px;
+      }
+      
       nav ul { flex-direction: column; gap: 10px; }
-      main { margin: 20px; padding: 20px; }
       header nav { flex-direction: column; gap: 10px; }
+      
+      nav .logo {
+        font-size: 1.4em;
+      }
+      
+      nav ul {
+        gap: 15px;
+      }
+      
+      .services {
+        grid-template-columns: 1fr;
+      }
+      
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      main {
+        margin-top: 140px !important;
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
